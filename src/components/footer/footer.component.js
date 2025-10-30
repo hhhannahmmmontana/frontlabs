@@ -1,6 +1,7 @@
 
 class FooterComponent extends HTMLElement {
     connectedCallback() {
+        const baseUrl = import.meta.env.BASE_URL;
         this.innerHTML = /*html*/`
             <footer class="footer">
                 <div class="container">
@@ -21,12 +22,12 @@ class FooterComponent extends HTMLElement {
                             <div class="footer__block links">
                                 <div class="footer__subblock">
                                     <h3 class="footer__block__title">discover</h3>
-                                    <a href="/about" class="footer__block__link">About Us</a>
-                                    <a href="/blog" class="footer__block__link">Blog</a>
+                                    <a href="${baseUrl}about" class="footer__block__link">About Us</a>
+                                    <a href="${baseUrl}blog" class="footer__block__link">Blog</a>
                                 </div>
                                 <div class="footer__subblock">
                                     <h3 class="footer__block__title">shopping</h3>
-                                    <a href="/catalog" class="footer__block__link">Catalog</a>
+                                    <a href="${baseUrl}catalog" class="footer__block__link">Catalog</a>
                                 </div>
                                 <div class="footer__subblock">
                                     <h3 class="footer__block__title">information</h3>

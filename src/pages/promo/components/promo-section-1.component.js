@@ -2,6 +2,7 @@ import ceramicVase from "/src/img/promo/ceramic-vase.jpg";
 
 class PromoSection1 extends HTMLElement {
     connectedCallback() {
+        const baseUrl = import.meta.env.BASE_URL;
         this.innerHTML = /*html*/`
             <section class="promo__section-1">
                 <div class="promo__section-1__img-title">
@@ -14,7 +15,7 @@ class PromoSection1 extends HTMLElement {
                         class="promo__img promo__section-1__img"
                     />
                 </div>
-                <a href="/catalog"><button class="btn-default promo__section-1__btn">shop now</button></a>
+                <a href="${baseUrl}catalog"><button class="btn-default promo__section-1__btn">shop now</button></a>
             </section>
         `
     }
