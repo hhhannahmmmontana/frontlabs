@@ -3,12 +3,14 @@ import "./components/promo-section-2.component.js";
 import "/src/components/get-in-touch/get-in-touch.component.js";
 import "./components/promo-section-4.component.js";
 
+import potter from "/src/img/promo/potter.jpg";
+
 class PromoPage extends HTMLElement {
     connectedCallback() {
         this.innerHTML = /*html*/`
             <section class="promo">
                 <div class="container">
-                    <img class="promo__potter-image" src="/src/img/promo/potter.jpg" alt="potter">
+                    <img class="promo__potter-image" src=${potter} alt="potter">
                     <div class="content">
                         <header-component></header-component>
                         <promo-section-1></promo-section-1>

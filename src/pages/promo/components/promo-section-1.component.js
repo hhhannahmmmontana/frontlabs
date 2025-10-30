@@ -1,3 +1,5 @@
+import ceramicVase from "/src/img/promo/ceramic-vase.jpg";
+
 class PromoSection1 extends HTMLElement {
     connectedCallback() {
         this.innerHTML = /*html*/`
@@ -7,7 +9,7 @@ class PromoSection1 extends HTMLElement {
                         Make your dream come true<br />or decorate your home
                     </h1>
                     <img
-                        src="/src/img/promo/ceramic-vase.jpg"
+                        src=${ceramicVase}
                         alt="vase"
                         class="promo__img promo__section-1__img"
                     />

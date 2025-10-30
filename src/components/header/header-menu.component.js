@@ -1,3 +1,4 @@
+import x from "/src/icons/x.svg";
 
 class HeaderMenuComponent extends HTMLElement {
     menuHiddenField = true;
@@ -35,7 +36,7 @@ class HeaderMenuComponent extends HTMLElement {
         this.innerHTML = /*html*/`
             <div class="header__menu${ this.menuHidden ? " hidden" : "" }">
                 <a class="header__menu-close">
-                    <img src="/src/icons/x.svg" class="header__menu-close__icon" alt="close" />
+                    <img src=${x} class="header__menu-close__icon" alt="close" />
                 </a>
                 <div class="header__menu__links">
                     <a href="/catalog" class="header__menu__link">catalog</a>

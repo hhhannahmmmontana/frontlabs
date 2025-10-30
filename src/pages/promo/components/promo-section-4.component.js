@@ -3,6 +3,10 @@ import Swiper from 'swiper';
 
 import 'swiper/css';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import tea1 from "/src/img/works/tea-1.jpg";
+import tea2 from "/src/img/works/tea-2.jpg";
+import tea3 from "/src/img/works/tea-3.jpg";
+import tea4 from "/src/img/works/tea-4.jpg";
 
 class PromoSection4 extends HTMLElement {
     connectedCallback() {
@@ -13,16 +17,16 @@ class PromoSection4 extends HTMLElement {
                     <div class="swiper promo__section-4__slider">
                         <div class="swiper-wrapper promo__section-4__slider__wrapper">
                             <div class="swiper-slide promo__section-4__slider__slide">
-                                <img class="promo__section-4__slider__slide__image" src="/src/img/works/tea-1.jpg" alt="Slide 1" />
+                                <img class="promo__section-4__slider__slide__image" src=${tea1} alt="Slide 1" />
                             </div>
                             <div class="swiper-slide promo__section-4__slider__slide">
-                                <img class="promo__section-4__slider__slide__image" src="/src/img/works/tea-2.jpg" alt="Slide 2" />
+                                <img class="promo__section-4__slider__slide__image" src=${tea2} alt="Slide 2" />
                             </div>
                             <div class="swiper-slide promo__section-4__slider__slide">
-                                <img class="promo__section-4__slider__slide__image" src="/src/img/works/tea-3.jpg" alt="Slide 3" />
+                                <img class="promo__section-4__slider__slide__image" src=${tea3} alt="Slide 3" />
                             </div>
                             <div class="swiper-slide promo__section-4__slider__slide">
-                                <img class="promo__section-4__slider__slide__image" src="/src/img/works/tea-4.jpg" alt="Slide 3" />
+                                <img class="promo__section-4__slider__slide__image" src=${tea4} alt="Slide 3" />
                             </div>
                         </div>
                     </div>
