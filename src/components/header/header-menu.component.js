@@ -33,15 +33,17 @@ class HeaderMenuComponent extends HTMLElement {
     }
 
     render() {
+        const baseUrl = import.meta.env.BASE_URL;
+
         this.innerHTML = /*html*/`
             <div class="header__menu${ this.menuHidden ? " hidden" : "" }">
                 <a class="header__menu-close">
                     <img src=${x} class="header__menu-close__icon" alt="close" />
                 </a>
                 <div class="header__menu__links">
-                    <a href="/catalog" class="header__menu__link">catalog</a>
-                    <a href="/blog" class="header__menu__link">blog</a>
-                    <a href="/about" class="header__menu__link">about</a>
+                    <a href="${baseUrl}catalog" class="header__menu__link">catalog</a>
+                    <a href="${baseUrl}blog" class="header__menu__link">blog</a>
+                    <a href="${baseUrl}about" class="header__menu__link">about</a>
                 </div>
             </div>
         `;

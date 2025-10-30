@@ -1,7 +1,8 @@
 import { Router } from "@vaadin/router";
 
+const baseUrl = import.meta.env.BASE_URL;
 const outlet = document.querySelector("#app");
-const router = new Router(outlet);
+const router = new Router(outlet, { baseUrl: baseUrl });
 
 router.setRoutes([
     {
