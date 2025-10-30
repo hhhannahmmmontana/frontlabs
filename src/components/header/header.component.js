@@ -1,4 +1,5 @@
 import "./header-menu.component";
+import logo from "/src/logo/logo.png";
 
 class HeaderComponent extends HTMLElement {
     render() {
@@ -7,7 +8,7 @@ class HeaderComponent extends HTMLElement {
                 <div class="burger"><span></span><span></span><span></span></div>
                 <div class="header__logo-container">
                     <a href="/" class="header__logo">
-                        <img src="/src/logo/logo.png" alt="logo"/>
+                        <img src=${logo} alt="logo"/>
                     </a>
                     <div class="header__links">
                         <a href="/catalog" class="header__link">catalog</a>

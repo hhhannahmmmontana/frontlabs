@@ -1,3 +1,6 @@
+import vase from "/src/img/form/vase.png";
+import tea from "/src/img/form/tea.jpg";
+
 class GetInTouchComponent extends HTMLElement {
     connectedCallback() {
         this.innerHTML = /*html*/`
@@ -5,7 +8,7 @@ class GetInTouchComponent extends HTMLElement {
                 <h2 class="get-in-touch__title h2-default">get in touch</h2>
                 <content class="get-in-touch__content">
                     <div class="get-in-touch__content__image-container">
-                        <img class="get-in-touch__content__image" src="/src/img/form/tea.jpg" alt="Tea" />
+                        <img class="get-in-touch__content__image" src=${tea} alt="Tea" />
                     </div>
                     <form action="javascript:void(0);" class="get-in-touch__content__form">
                         <div class="default-input-container text-container">
@@ -28,7 +31,7 @@ class GetInTouchComponent extends HTMLElement {
                                 </div>
                                 <button class="send-request-button">send request</button>
                             </div>
-                            <img class="get-in-touch__content__form__last-row__corner-img" src="/src/img/form/vase.png" alt="Vase" />
+                            <img class="get-in-touch__content__form__last-row__corner-img" src=${vase} alt="Vase" />
                         </div>
                     </form>
                 </content>
