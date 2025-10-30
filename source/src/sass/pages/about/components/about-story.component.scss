@@ -1,0 +1,101 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.about__story {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__image {
+        box-shadow: $default-box-shadow;
+    }
+}
+
+@media only screen and (min-width: $lg) {
+    .about__story {
+        &__title {
+            margin: 100px 0;
+        }
+        &__image {
+            margin-right: 20px;
+            width: 700px;
+            height: 481px;
+        }
+        &__text {
+            p {
+                margin-bottom: 30px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $md) and (max-width: calc($lg - $eps)) {
+    .about__story {
+        &__title {
+            margin: 60px 0;
+        }
+        &__image {
+            margin-right: 20px;
+            width: 550px;
+            height: 378px;
+        }
+        &__text {
+            p {
+                margin-bottom: 25px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $sm) and (max-width: calc($md - $eps)) {
+    .about__story {
+        &__content {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__title {
+            margin: 60px 0;
+        }
+        &__image {
+            width: 600px;
+            height: 412px;
+            margin-bottom: 35px;
+        }
+        &__text {
+            p {
+                margin-bottom: 25px;
+                font-size: 16px;
+            }
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $xs) and (max-width: calc($sm - $eps)) {
+    .about__story {
+        &__content {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__title {
+            margin: 60px 0;
+        }
+        &__image {
+            width: 340px;
+            height: 234px;
+            margin-bottom: 35px;
+        }
+        &__text {
+            p {
+                margin-bottom: 25px;
+                font-size: 16px;
+            }
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

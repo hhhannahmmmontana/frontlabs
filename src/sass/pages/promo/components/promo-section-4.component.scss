@@ -1,0 +1,173 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.promo {
+    &__section-4 {
+        &__slider-container {
+            position: relative;
+        }
+        &__slider {
+            margin-bottom: 20px;
+
+            &__slide {
+                &__image {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            &__button {
+                position: absolute;
+                transform: translateY(-100%);
+                top: 50%;
+                cursor: pointer;
+
+                span {
+                    display: block;
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 0;
+                    font-size: 32px;
+                }
+            }
+            &__pagination {
+                display: flex;
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+                &__bullet {
+                    cursor: pointer;
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    background-color: $dark;
+                    margin-right: 12px;
+
+                    &--active {
+                        background-color: $ceramic;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $lg) {
+    .promo {
+        &__section-4 {
+            margin-bottom: 100px;
+
+            &__title {
+                margin-bottom: 88px;
+            }
+
+            &__slider {
+                width: 1200px;
+
+                &__slide {
+                    &__image {
+                        width: 400px;
+                        height: 265px;
+                    }
+                }
+                &__button {
+                    &.prev {
+                        left: 42px;
+                    } 
+                    &.next {
+                        right: 42px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $md) and (max-width: calc($lg - $eps)) {
+    .promo {
+        &__section-4 {
+            margin-bottom: 60px;
+
+            &__title {
+                margin-bottom: 88px;
+            }
+
+            &__slider {
+                width: 1058px;
+                margin-bottom: 20px;
+
+                &__slide {
+                    &__image {
+                        width: 350px;
+                        height: 230px;
+                    }
+                }
+                &__button {
+                    transform: scaleX(0.5) translateY(-100%);
+                    &.prev {
+                        left: 0px;
+                    } 
+                    &.next {
+                        right: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $sm) and (max-width: calc($md - $eps)) {
+    .promo {
+        &__section-4 {
+            margin-bottom: 60px;
+
+            &__title {
+                margin-bottom: 52px;
+            }
+
+            &__slider {
+                width: 400px;
+                margin-bottom: 20px;
+
+                &__slide {
+                    &__image {
+                        width: 400px;
+                        height: 263px;
+                    }
+                }
+                &__button {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $xs) and (max-width: calc($sm - $eps)) {
+    .promo {
+        &__section-4 {
+            margin-bottom: 60px;
+
+            &__title {
+                margin-bottom: 52px;
+            }
+        }
+
+        &__slider {
+            width: 340px;
+            margin-bottom: 20px;
+
+            &__slide {
+                &__image {
+                    width: 340px;
+                    height: 223px;
+                }
+            }
+            &__button {
+                display: none;
+            }
+        }
+    }
+}
