@@ -1,5 +1,6 @@
+import { API_BASE } from "/src/js/constants";
 import "./components/blog-article.component"
-import {ArticlesMockService} from "/src/services/mock.articles.service.js";
+import {ArticlesService} from "/src/services/articles.service.js";
 
 class BlogPage extends HTMLElement {
     elements = []
@@ -9,9 +10,9 @@ class BlogPage extends HTMLElement {
             ? this.elements.map(el => {
                 return /*html*/`
                     <blog-article
-                        imgsrc="${el.imgsrc}"
+                        imgsrc="${el.image}"
                         title="${el.title}"
-                        description="${el.description}"
+                        description="${el.excerpt}"
                     ></blog-article>
                 `;
             }).join('') : /*html*/`<p>Nothing found</p>`;
@@ -35,7 +36,7 @@ class BlogPage extends HTMLElement {
     }
 
     getElements() {
-        let service = new ArticlesMockService();
+        let service = new ArticlesService(API_BASE);
         service.getItems().then(elements => {
             this.elements = elements;
             this.render();
