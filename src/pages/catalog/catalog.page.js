@@ -1,5 +1,6 @@
+import { API_BASE } from "/src/js/constants";
 import "./components/catalog-element.component";
-import {CatalogMockService} from "/src/services/mock.catalog.service.js";
+import {CatalogService} from "/src/services/catalog.service.js";
 
 class CatalogPage extends HTMLElement {
     items = [];
@@ -8,14 +9,15 @@ class CatalogPage extends HTMLElement {
     currentCategory = "";
 
     getElements() {
-        let service = new CatalogMockService();
+        let service = new CatalogService(API_BASE);
         service.getItems().then(items => {
             this.items = items;
-            this.categories = [...new Set(items.flatMap(item => item.categories))];
-            this.categories.forEach(category => {
-                this.categoriedItems[category] = items.filter(item =>
-                    item.categories.includes(category)
-                );
+            this.categories = [...new Set(items.flatMap(item => item.category))];
+            items.forEach(item => {
+                if (this.categoriedItems[item.category] == undefined) {
+                    this.categoriedItems[item.category] = [];
+                }
+                this.categoriedItems[item.category].push(item);
             });
 
             this.currentCategory = Object.keys(this.categoriedItems)[0];
@@ -43,9 +45,10 @@ class CatalogPage extends HTMLElement {
                 ${
                     this.categoriedItems[this.currentCategory].map(el => /*html*/`
                         <catalog-element
-                            imgsrc="${el.imgsrc}"
-                            name="${el.name}"
+                            imgsrc="${el.image}"
+                            name="${el.title}"
                             price="${el.price}"
+                            currency="${el.currency}"
                         ></catalog-element>
                     `).join('')
                 }
